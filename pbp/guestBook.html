@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript">
+        angular.module('PBP', ['ngMaterial']);
+    </script>
+    <div ng-app="PBP">
+        <md-content>
+            <md-card>
+                <md-toolbar class="md-hue-2" style="text-align:center">
+                    <a href="index.html"><h3>Parkingas be parkių</h3></a>
+                </md-toolbar>
+                <div ng-controller="DemoCtrl" layout="column" layout-padding ng-cloak>
+
+                    <br/>
+                    <md-content class="md-no-momentum">
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Vardas</label>
+                            <input ng-model="user.name" type="text" placeholder="Vardas">
+                        </md-input-container>
+
+                        <md-input-container md-no-float class="md-block">
+                          <label>Telefono numeris</label>
+                            <input ng-model="user.phone" type="text" placeholder="Telefono numeris">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Elektroninis paštas</label>
+                            <input ng-model="user.email" type="email" placeholder="Elektroninis paštas" ng-required="true">
+                        </md-input-container>
+
+                        <md-input-container md-no-float class="md-block">
+                          <label>Adresas</label>
+                            <input ng-model="user.address" type="text" placeholder="Adresas">
+                            <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                            <label>Atsiliepimas</label>
+                            <input ng-model="user.feedback" type="text" placeholder="Atsiliepimas">
+                        </md-input-container>
+
+                    </md-content>
+
+                </div>
+                <md-button class="md-raised" style="min-height:50px">Siųsti atsiliepimą</md-button>
+                <md-button href="index.html" class="md-raised" style="min-height:50px">Atgal</md-button>
+            </md-card>
+        </md-content>
+    </div>
+</body>
+
+<script>
+angular
+  .module('PBP', ['ngMaterial', 'ngMessages'])
+  .controller('DemoCtrl', function($scope) {
+    $scope.user = {
+      name: 'Vartotojas',
+      email: 'labaigerasstudentas@mif.stud.vu.lt',
+      phone: '+37000000000',
+      address: 'Didlaukio g. 47, Vilnius',
+      feedback:''
+    };
+  });
+</script>
+</html>

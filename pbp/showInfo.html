@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        angular.module('PBP', ['ngMaterial']);
+    </script>
+</body>
+<div ng-app="PBP">
+    <md-content >
+        <md-card>
+            <md-toolbar class="md-hue-2" style="text-align:center">
+                <a href='index.html'><h3 >Parkingas be parkių</h3></a>
+            </md-toolbar>
+            <div id="carsByCount">
+                <label>Vidutiniškai mašinų:</label>
+                <span id="carsByCountSpan">
+                </span>
+            </div>
+            <div id="freeByTime">
+                <label>Vidutiniškai laisvų vietų:</label>
+                <span id="freeByTimeSpan">
+                </span>
+            </div>
+            <div id="leaveInterval">
+                <label>Vidutinis vietos atlaisvinimo laikas:</label>
+                <span id="leaveIntervalSpan">
+                </span>
+            </div>
+        <md-button class="md-raised" href="index.html">Grįžti</md-button>
+        </md-card>
+
+
+    </md-content>
+
+    <script>
+        $.get('http://78.56.30.135:8080/rest/statistics', function(data, status) {
+            console.log(data);
+            var cbcs = document.getElementById('carsByCountSpan');
+            var fbt = document.getElementById('freeByTimeSpan');
+            var leave = document.getElementById('leaveIntervalSpan');
+            cbcs.innerHTML = data.avgFreeSpaceByCarsCount;
+            fbt.innerHTML = data.avgFreeSpaceByTime;
+            leave.innerHTML = data.avgLeaveInterval;
+
+        })
+    </script>
+
+</html>

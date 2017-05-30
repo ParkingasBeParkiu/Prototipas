@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript">
+        angular.module('PBP', ['ngMaterial']);
+    </script>
+    <div ng-app="PBP">
+        <md-content>
+            <md-card>
+                <md-toolbar class="md-hue-2" style="text-align:center">
+                    <a href="index.html"><h3>Parkingas be parkių</h3></a>
+                </md-toolbar>
+                <md-button href="parkings.html" class="md-raised" style="min-height:50px;">Peržiūrėti aikšteles</md-button>
+                <md-button href="showInfo.html" class="md-raised" style="min-height:50px;">Rodyti agreguotą informaciją</md-button>
+                <md-button href="about.html" class="md-raised" style="min-height:50px">Apie programėlę</md-button>
+                <md-button href="guestBook.html" class="md-raised" style="min-height:50px">Rašyti atsiliepimą</md-button>
+                <md-button id='close-button' class="md-raised" style="min-height:50px">Uždaryti</md-button>
+            </md-card>
+        </md-content>
+    </div>
+</body>
+
+</html>
